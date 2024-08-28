@@ -1,0 +1,12 @@
+Column,Table
+SETOR_UNIMED,NULL
+ENDERECO,ENDERECORESIDENCIAL
+BENEFICIARIO,HANDLE
+ENDERECO,HANDLE
+BENEFICIARIO,ENDERECORESIDENCIAL
+ENDERECO,DDD1
+ENDERECO,PREFIXO1
+ENDERECO,NUMERO1
+BENEFICIARIO,HANDLE
+""
+"Note: The above output is in the required CSV format, with each row representing a table-column pair. The table names are in the format ""table_name"" and the column names are in the format ""column_name""."

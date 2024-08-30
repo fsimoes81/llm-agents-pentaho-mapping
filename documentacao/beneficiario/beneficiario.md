@@ -28,6 +28,7 @@ A geração dessa tabela ocorre através de um workflow do Pentaho que tem os se
 
 ### Fluxo dos dados
 
+```mermaid
 flowchart TD
     A[beneficiario] --> B(sam_famila_teto_pr)
     B --> C{Filter rows}
@@ -35,6 +36,7 @@ flowchart TD
     C -->|Two| E[sem setor]
     E -->F[bn_beneficiario]
     D -->F[bn_beneficiario]
+```    
 
 ## Passo 1: Beneficiário
 

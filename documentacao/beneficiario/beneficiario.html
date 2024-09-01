@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>beneficiario.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="benefici%C3%A1rio">Beneficiário</h1>
+<h2 id="introdu%C3%A7%C3%A3o">Introdução</h2>
+<p>A tabela de beneficiários no DW é uma tabela fato com o nome bn_beneficiario, essa tabela possuí um total de 149 campos vindo de diversas tabelas. A ideia dessa tabela é ser uma tabela de dimensão, no entanto conforme veremos durante a análise, trata-se de uma tabela <em>FATO</em>, devido a estrutura do seu processo de ETL.</p>
+<p>A geração dessa tabela ocorre através de um workflow do Pentaho que tem os seguintes passos:</p>
+<ol>
+<li>BENEFICIÁRIO (01_beneficiario.sql)</li>
+<li>SAM_FAMILIA_TETO_PF (02_sam_familia_teto_pf.sql)</li>
+<li>Filtro que define se irá executar os passo 4.1 ou 4.2. Não temos a regra do filtro documentada.</li>
+<li>BUSCA MICROSIGA (03_1_busca_microsiga.sql)</li>
+<li>SEM SETOR (03_2_sem_setor.sql)</li>
+</ol>
+<h3 id="fluxo-dos-dados-benefici%C3%A1rio">Fluxo dos dados# Beneficiário</h3>
+<h2 id="introdu%C3%A7%C3%A3o">Introdução</h2>
+<p>A tabela de beneficiários no DW é uma tabela fato com o nome bn_beneficiario, essa tabela possuí um total de 149 campos vindo de diversas tabelas. A ideia dessa tabela é ser uma tabela de dimensão, no entanto conforme veremos durante a análise, trata-se de uma tabela <em>FATO</em>, devido a estrutura do seu processo de ETL.</p>
+<p>A geração dessa tabela ocorre através de um workflow do Pentaho que tem os seguintes passos:</p>
+<ol>
+<li>BENEFICIÁRIO (01_beneficiario.sql)</li>
+<li>SAM_FAMILIA_TETO_PF (02_sam_familia_teto_pf.sql)</li>
+<li>Filtro que define se irá executar os passo 4.1 ou 4.2. Não temos a regra do filtro documentada.
+4.1. BUSCA MICROSIGA (03_1_busca_microsiga.sql)
+4.2. SEM SETOR (03_2_sem_setor.sql)</li>
+</ol>
+<h3 id="fluxo-dos-dados">Fluxo dos dados</h3>
+<pre><code class="language-mermaid"><div class="mermaid">flowchart TD
+    A[beneficiario] --> B(sam_famila_teto_pr)
+    B --> C{Filter rows}
+    C -->|One| D[busca microsiga]
+    C -->|Two| E[sem setor]
+    E -->F[bn_beneficiario]
+    D -->F[bn_beneficiario]
+</div></code></pre>
+<h2 id="passo-1-benefici%C3%A1rio">Passo 1: Beneficiário</h2>
+<p>O processo de ETL da etapa Beneficiário esta no arquivo 01_beneficiario.sql[adicionar link]. O ETL processa um total de <strong>28 tabelas</strong> aproximadamente[^1] e aproximadamente 378 campos de dados.</p>
+<p>Do total de aproximadamente 378 campos processados nessa etapa de ETL, 122 deles vão para o DW, conforme tabela abaixo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">table_name</th>
+<th style="text-align:left">column_name</th>
+<th style="text-align:left">dw_column_name</th>
+<th style="text-align:right">num_distinct</th>
+<th style="text-align:right">percent_nulls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">ESTADOS</td>
+<td style="text-align:left">UF_UNI_ORIGEM</td>
+<td style="text-align:left">UF_UNI_ORIGEM</td>
+<td style="text-align:right">27</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left">ESTADOS</td>
+<td style="text-align:left">UF</td>
+<td style="text-align:left">UF</td>
+<td style="text-align:right">27</td>
+<td style="text-align:right">0.25</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left">ESTADOS</td>
+<td style="text-align:left">UF_CORRESP</td>
+<td style="text-align:left">UF_CORRESP</td>
+<td style="text-align:right">27</td>
+<td style="text-align:right">0.39</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:left">ESTADOS</td>
+<td style="text-align:left">UF_RG</td>
+<td style="text-align:left">UF_RG</td>
+<td style="text-align:right">31</td>
+<td style="text-align:right">0.86</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td style="text-align:left">PAISES</td>
+<td style="text-align:left">NACIONALIDADE</td>
+<td style="text-align:left">NACIONALIDADE</td>
+<td style="text-align:right">92</td>
+<td style="text-align:right">0.35</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:left">PAISES</td>
+<td style="text-align:left">PAIS_RG</td>
+<td style="text-align:left">PAIS_RG</td>
+<td style="text-align:right">146</td>
+<td style="text-align:right">0.54</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CODIGO_AFINIDADE</td>
+<td style="text-align:left">CODIGO_AFINIDADE</td>
+<td style="text-align:right">4964864</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DIAS_COMPRA_CARENCIA</td>
+<td style="text-align:left">DIAS_COMPRA_CARENCIA</td>
+<td style="text-align:right">1736</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">ORIGEM</td>
+<td style="text-align:left">ORIGEM</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_PRIM_ADESAO_BENEF</td>
+<td style="text-align:left">DATA_PRIM_ADESAO_BENEF</td>
+<td style="text-align:right">13328</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CODIGO_ORIGEM</td>
+<td style="text-align:left">CODIGO_ORIGEM</td>
+<td style="text-align:right">5009920</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">11</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CODIGO_BENEFICIARIO</td>
+<td style="text-align:left">CODIGO_BENEFICIARIO</td>
+<td style="text-align:right">5024768</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CODIGO_UNI_PAG</td>
+<td style="text-align:left">CODIGO_UNI_PAG</td>
+<td style="text-align:right">424</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">13</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">ID_BENEFICIARIO</td>
+<td style="text-align:left">ID_BENEFICIARIO</td>
+<td style="text-align:right">5107355</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">14</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">BENEFICIARIO</td>
+<td style="text-align:left">BENEFICIARIO</td>
+<td style="text-align:right">3124480</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">15</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">NAO_TEM_CARENCIA</td>
+<td style="text-align:left">NAO_TEM_CARENCIA</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">16</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_ADESAO</td>
+<td style="text-align:left">DATA_ADESAO</td>
+<td style="text-align:right">13124</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">17</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">MOTIVO_INCLUSAO</td>
+<td style="text-align:left">MOTIVO_INCLUSAO</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0.05</td>
+</tr>
+<tr>
+<td style="text-align:right">18</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_CANCELAMENTO</td>
+<td style="text-align:left">DATA_CANCELAMENTO</td>
+<td style="text-align:right">13336</td>
+<td style="text-align:right">0.18</td>
+</tr>
+<tr>
+<td style="text-align:right">19</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">MOTIVO_CANC</td>
+<td style="text-align:left">MOTIVO_CANC</td>
+<td style="text-align:right">73</td>
+<td style="text-align:right">0.18</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">SEQUENCIA</td>
+<td style="text-align:left">SEQUENCIA</td>
+<td style="text-align:right">3552240</td>
+<td style="text-align:right">0.3</td>
+</tr>
+<tr>
+<td style="text-align:right">21</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">COD_BENEFICIARIO_ANS</td>
+<td style="text-align:left">COD_BENEFICIARIO_ANS</td>
+<td style="text-align:right">3327744</td>
+<td style="text-align:right">0.3</td>
+</tr>
+<tr>
+<td style="text-align:right">22</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">SOFREU_ADAPTACAO</td>
+<td style="text-align:left">SOFREU_ADAPTACAO</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0.34</td>
+</tr>
+<tr>
+<td style="text-align:right">23</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CCO</td>
+<td style="text-align:left">CCO</td>
+<td style="text-align:right">3054592</td>
+<td style="text-align:right">0.36</td>
+</tr>
+<tr>
+<td style="text-align:right">24</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">CCO_DV</td>
+<td style="text-align:left">CCO_DV</td>
+<td style="text-align:right">101</td>
+<td style="text-align:right">0.36</td>
+</tr>
+<tr>
+<td style="text-align:right">25</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">MATRIC_BEN_EMPRESA</td>
+<td style="text-align:left">MATRIC_BEN_EMPRESA</td>
+<td style="text-align:right">344320</td>
+<td style="text-align:right">0.69</td>
+</tr>
+<tr>
+<td style="text-align:right">26</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">ORIGEM_CARENCIA</td>
+<td style="text-align:left">ORIGEM_CARENCIA</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0.74</td>
+</tr>
+<tr>
+<td style="text-align:right">27</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_ATENDIMENTO_ATE</td>
+<td style="text-align:left">DATA_ATENDIMENTO_ATE</td>
+<td style="text-align:right">9384</td>
+<td style="text-align:right">0.76</td>
+</tr>
+<tr>
+<td style="text-align:right">28</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">EMAIL</td>
+<td style="text-align:left">EMAIL</td>
+<td style="text-align:right">584768</td>
+<td style="text-align:right">0.84</td>
+</tr>
+<tr>
+<td style="text-align:right">29</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_ULTIMA_ATU_CADASTRAL</td>
+<td style="text-align:left">DATA_ULTIMA_ATU_CADASTRAL</td>
+<td style="text-align:right">24410</td>
+<td style="text-align:right">0.88</td>
+</tr>
+<tr>
+<td style="text-align:right">30</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE2_ZENITE</td>
+<td style="text-align:left">K_TELEFONE2_ZENITE</td>
+<td style="text-align:right">79752</td>
+<td style="text-align:right">0.98</td>
+</tr>
+<tr>
+<td style="text-align:right">31</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE1_ZENITE</td>
+<td style="text-align:left">K_TELEFONE1_ZENITE</td>
+<td style="text-align:right">113872</td>
+<td style="text-align:right">0.98</td>
+</tr>
+<tr>
+<td style="text-align:right">32</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">DATA_ADAPTACAO</td>
+<td style="text-align:left">DATA_ADAPTACAO</td>
+<td style="text-align:right">2924</td>
+<td style="text-align:right">0.99</td>
+</tr>
+<tr>
+<td style="text-align:right">33</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">IDADE_ADAPTACAO</td>
+<td style="text-align:left">IDADE_ADAPTACAO</td>
+<td style="text-align:right">79</td>
+<td style="text-align:right">0.99</td>
+</tr>
+<tr>
+<td style="text-align:right">34</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_EMAIL_IW</td>
+<td style="text-align:left">K_EMAIL_IW</td>
+<td style="text-align:right">13585</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">35</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_EMAIL_IRIS</td>
+<td style="text-align:left">K_EMAIL_IRIS</td>
+<td style="text-align:right">5420</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">36</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_EMAIL_SAC</td>
+<td style="text-align:left">K_EMAIL_SAC</td>
+<td style="text-align:right">105</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">37</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE_RES_SAC</td>
+<td style="text-align:left">K_TELEFONE_RES_SAC</td>
+<td style="text-align:right">233</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">38</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE_CONTATO_SAC</td>
+<td style="text-align:left">K_TELEFONE_CONTATO_SAC</td>
+<td style="text-align:right">86</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">39</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE3_IW</td>
+<td style="text-align:left">K_TELEFONE3_IW</td>
+<td style="text-align:right">2591</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE2_IW</td>
+<td style="text-align:left">K_TELEFONE2_IW</td>
+<td style="text-align:right">12982</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">41</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_EMAIL_ZENITE</td>
+<td style="text-align:left">K_EMAIL_ZENITE</td>
+<td style="text-align:right">5217</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">42</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE1_IW</td>
+<td style="text-align:left">K_TELEFONE1_IW</td>
+<td style="text-align:right">16318</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">43</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE4_IW</td>
+<td style="text-align:left">K_TELEFONE4_IW</td>
+<td style="text-align:right">6929</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">44</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">K_TELEFONE_CELULAR_SAC</td>
+<td style="text-align:left">K_TELEFONE_CELULAR_SAC</td>
+<td style="text-align:right">382</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">45</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">BLOQUEAR_RECAD_BIO_AUT_WEB</td>
+<td style="text-align:left">BLOQUEAR_RECAD_BIO_AUT_WEB</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">46</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">47</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DV_CARTAO_BENEF</td>
+<td style="text-align:left">DV_CARTAO_BENEF</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">48</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">SITUACAO_CARTAO</td>
+<td style="text-align:left">SITUACAO_CARTAO</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">49</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">VIA_CARTAO</td>
+<td style="text-align:left">VIA_CARTAO</td>
+<td style="text-align:right">61</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">50</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DATA_VALID_CARTEIRA</td>
+<td style="text-align:left">DATA_VALID_CARTEIRA</td>
+<td style="text-align:right">10328</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">51</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DATA_INICIAL_VALIDADE</td>
+<td style="text-align:left">DATA_INICIAL_VALIDADE</td>
+<td style="text-align:right">24456</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">52</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DATA_FINAL_VALIDADE</td>
+<td style="text-align:left">DATA_FINAL_VALIDADE</td>
+<td style="text-align:right">10328</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">53</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DATA_GERAC_CARTEIRA</td>
+<td style="text-align:left">DATA_GERAC_CARTEIRA</td>
+<td style="text-align:right">686208</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">54</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">DATA_EMISS_CARTEIRA</td>
+<td style="text-align:left">DATA_EMISS_CARTEIRA</td>
+<td style="text-align:right">115888</td>
+<td style="text-align:right">0.35</td>
+</tr>
+<tr>
+<td style="text-align:right">55</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">SITUACAO_ATUALIZACAO_DADOS</td>
+<td style="text-align:left">SITUACAO_ATUALIZACAO_DADOS</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0.63</td>
+</tr>
+<tr>
+<td style="text-align:right">56</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">NUMERO_FATURA</td>
+<td style="text-align:left">NUMERO_FATURA</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">57</td>
+<td style="text-align:left">SAM_BENEFICIARIO_CARTAOIDENTIF</td>
+<td style="text-align:left">VALOR_FATURADO</td>
+<td style="text-align:left">VALOR_FATURADO</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">58</td>
+<td style="text-align:left">SAM_BENEFICIARIO_HISTORICO</td>
+<td style="text-align:left">DATA_REATIVACAO</td>
+<td style="text-align:left">DATA_REATIVACAO</td>
+<td style="text-align:right">3241</td>
+<td style="text-align:right">0.98</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">59</td>
+<td style="text-align:left">SAM_BENEFICIARIO_MOD_REPASSE</td>
+<td style="text-align:left">DATA_INICIO_REPASSE</td>
+<td style="text-align:left">DATA_INICIO_REPASSE</td>
+<td style="text-align:right">8386</td>
+<td style="text-align:right">0.86</td>
+</tr>
+<tr>
+<td style="text-align:right">60</td>
+<td style="text-align:left">SAM_BENEFICIARIO_MOD_REPASSE</td>
+<td style="text-align:left">DATA_FINAL_REPASSE</td>
+<td style="text-align:left">DATA_FINAL_REPASSE</td>
+<td style="text-align:right">5699</td>
+<td style="text-align:right">0.89</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">61</td>
+<td style="text-align:left">SAM_CAMARACOMPENSACAO</td>
+<td style="text-align:left">UNI_ORIGEM_CAMARA_COMPENSACAO</td>
+<td style="text-align:left">UNI_ORIGEM_CAMARA_COMPENSACAO</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">62</td>
+<td style="text-align:left">SAM_CAMARACOMPENSACAO</td>
+<td style="text-align:left">UNI_ORIGEM_TIPO_CAMARA_COMP</td>
+<td style="text-align:left">UNI_ORIGEM_TIPO_CAMARA_COMP</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">63</td>
+<td style="text-align:left">SAM_CBO</td>
+<td style="text-align:left">CBO</td>
+<td style="text-align:left">CBO</td>
+<td style="text-align:right">2681</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">INTERCAMBIO</td>
+<td style="text-align:left">INTERCAMBIO</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">65</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">ID_CONTRATANTE</td>
+<td style="text-align:left">ID_CONTRATANTE</td>
+<td style="text-align:right">41976</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">66</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">CONTRATANTE</td>
+<td style="text-align:left">CONTRATANTE</td>
+<td style="text-align:right">36712</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">67</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">DATA_ADESAO_CONTRATO</td>
+<td style="text-align:left">DATA_ADESAO_CONTRATO</td>
+<td style="text-align:right">5890</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">68</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">UNI_ORIGEM</td>
+<td style="text-align:left">UNI_ORIGEM</td>
+<td style="text-align:right">408</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">69</td>
+<td style="text-align:left">SAM_CONTRATO</td>
+<td style="text-align:left">DATA_CANC_CONTRATO</td>
+<td style="text-align:left">DATA_CANC_CONTRATO</td>
+<td style="text-align:right">1327</td>
+<td style="text-align:right">0.67</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">70</td>
+<td style="text-align:left">SAM_CONTRATO_TIPOCARTAO</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">71</td>
+<td style="text-align:left">SAM_CONTRATO_TPDEP</td>
+<td style="text-align:left">IDADE_MAXIMA</td>
+<td style="text-align:left">IDADE_MAXIMA</td>
+<td style="text-align:right">28</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">72</td>
+<td style="text-align:left">SAM_CONVENIO</td>
+<td style="text-align:left">CONVENIO</td>
+<td style="text-align:left">CONVENIO</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">73</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">BAIRRO</td>
+<td style="text-align:left">BAIRRO</td>
+<td style="text-align:right">31368</td>
+<td style="text-align:right">0.25</td>
+</tr>
+<tr>
+<td style="text-align:right">74</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">ENDERECO</td>
+<td style="text-align:left">ENDERECO</td>
+<td style="text-align:right">173728</td>
+<td style="text-align:right">0.25</td>
+</tr>
+<tr>
+<td style="text-align:right">75</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">CEP</td>
+<td style="text-align:left">CEP</td>
+<td style="text-align:right">152256</td>
+<td style="text-align:right">0.25</td>
+</tr>
+<tr>
+<td style="text-align:right">76</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">NUMERO</td>
+<td style="text-align:left">NUMERO</td>
+<td style="text-align:right">10308</td>
+<td style="text-align:right">0.26</td>
+</tr>
+<tr>
+<td style="text-align:right">77</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">BAIRRO_CORRESP</td>
+<td style="text-align:left">BAIRRO_CORRESP</td>
+<td style="text-align:right">24756</td>
+<td style="text-align:right">0.39</td>
+</tr>
+<tr>
+<td style="text-align:right">78</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">ENDERECO_CORRESP</td>
+<td style="text-align:left">ENDERECO_CORRESP</td>
+<td style="text-align:right">130512</td>
+<td style="text-align:right">0.39</td>
+</tr>
+<tr>
+<td style="text-align:right">79</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">NUMERO_CORRESP</td>
+<td style="text-align:left">NUMERO_CORRESP</td>
+<td style="text-align:right">9544</td>
+<td style="text-align:right">0.39</td>
+</tr>
+<tr>
+<td style="text-align:right">80</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">CEP_CORRESP</td>
+<td style="text-align:left">CEP_CORRESP</td>
+<td style="text-align:right">119712</td>
+<td style="text-align:right">0.39</td>
+</tr>
+<tr>
+<td style="text-align:right">81</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">COMPLEMENTO</td>
+<td style="text-align:left">COMPLEMENTO</td>
+<td style="text-align:right">141600</td>
+<td style="text-align:right">0.7</td>
+</tr>
+<tr>
+<td style="text-align:right">82</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">COMPLEMENTO_CORRESP</td>
+<td style="text-align:left">COMPLEMENTO_CORRESP</td>
+<td style="text-align:right">127200</td>
+<td style="text-align:right">0.74</td>
+</tr>
+<tr>
+<td style="text-align:right">83</td>
+<td style="text-align:left">SAM_ENDERECO</td>
+<td style="text-align:left">DDD</td>
+<td style="text-align:left">DDD</td>
+<td style="text-align:right">81</td>
+<td style="text-align:right">0.86</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">84</td>
+<td style="text-align:left">SAM_ESTADOCIVIL</td>
+<td style="text-align:left">ESTADO_CIVIL</td>
+<td style="text-align:left">ESTADO_CIVIL</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">85</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">CODIGO_FAMILIA</td>
+<td style="text-align:left">CODIGO_FAMILIA</td>
+<td style="text-align:right">858624</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">86</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_ADESAO_FAMILIA</td>
+<td style="text-align:left">DATA_ADESAO_FAMILIA</td>
+<td style="text-align:right">23756</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">87</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">ID_FAMILIA</td>
+<td style="text-align:left">ID_FAMILIA</td>
+<td style="text-align:right">2071680</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">88</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">SITUACAO_FAMILIA</td>
+<td style="text-align:left">SITUACAO_FAMILIA</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">89</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DIA_COBRANCA</td>
+<td style="text-align:left">DIA_COBRANCA</td>
+<td style="text-align:right">31</td>
+<td style="text-align:right">0.02</td>
+</tr>
+<tr>
+<td style="text-align:right">90</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">COBRANCA_MES_SEGUINTE</td>
+<td style="text-align:left">COBRANCA_MES_SEGUINTE</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">0.02</td>
+</tr>
+<tr>
+<td style="text-align:right">91</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_ULTIMO_REAJUSTE_FAMILIA</td>
+<td style="text-align:left">DATA_ULTIMO_REAJUSTE_FAMILIA</td>
+<td style="text-align:right">12372</td>
+<td style="text-align:right">0.29</td>
+</tr>
+<tr>
+<td style="text-align:right">92</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_CANCELAMENTO_FAMILIA</td>
+<td style="text-align:left">DATA_CANCELAMENTO_FAMILIA</td>
+<td style="text-align:right">11028</td>
+<td style="text-align:right">0.37</td>
+</tr>
+<tr>
+<td style="text-align:right">93</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_INCLUSAO_FAMILIA</td>
+<td style="text-align:left">DATA_INCLUSAO_FAMILIA</td>
+<td style="text-align:right">974208</td>
+<td style="text-align:right">0.58</td>
+</tr>
+<tr>
+<td style="text-align:right">94</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_VENDA_FAMILIA</td>
+<td style="text-align:left">DATA_VENDA_FAMILIA</td>
+<td style="text-align:right">776832</td>
+<td style="text-align:right">0.61</td>
+</tr>
+<tr>
+<td style="text-align:right">95</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">USUARIO_INCLUSAO_FAMILIA</td>
+<td style="text-align:left">USUARIO_INCLUSAO_FAMILIA</td>
+<td style="text-align:right">377</td>
+<td style="text-align:right">0.8</td>
+</tr>
+<tr>
+<td style="text-align:right">96</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">NUM_PROPOSTA_FAMILIA</td>
+<td style="text-align:left">NUM_PROPOSTA_FAMILIA</td>
+<td style="text-align:right">378432</td>
+<td style="text-align:right">0.86</td>
+</tr>
+<tr>
+<td style="text-align:right">97</td>
+<td style="text-align:left">SAM_FAMILIA</td>
+<td style="text-align:left">DATA_INICIO_INAT_FAMILIA</td>
+<td style="text-align:left">DATA_INICIO_INAT_FAMILIA</td>
+<td style="text-align:right">4214</td>
+<td style="text-align:right">0.99</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">98</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">SEXO</td>
+<td style="text-align:left">SEXO</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">99</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DATA_NASCIMENTO</td>
+<td style="text-align:left">DATA_NASCIMENTO</td>
+<td style="text-align:right">41792</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">100</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DATA_INGRESSO</td>
+<td style="text-align:left">DATA_INGRESSO</td>
+<td style="text-align:right">13836</td>
+<td style="text-align:right">0.06</td>
+</tr>
+<tr>
+<td style="text-align:right">101</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">MATRICULA_UNICA</td>
+<td style="text-align:left">MATRICULA_UNICA</td>
+<td style="text-align:right">4388352</td>
+<td style="text-align:right">0.06</td>
+</tr>
+<tr>
+<td style="text-align:right">102</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DATA_PRIMEIRA_ADESAO</td>
+<td style="text-align:left">DATA_PRIMEIRA_ADESAO</td>
+<td style="text-align:right">13836</td>
+<td style="text-align:right">0.06</td>
+</tr>
+<tr>
+<td style="text-align:right">103</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">CPF_BENEFICIARIO</td>
+<td style="text-align:left">CPF_BENEFICIARIO</td>
+<td style="text-align:right">1989248</td>
+<td style="text-align:right">0.24</td>
+</tr>
+<tr>
+<td style="text-align:right">104</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">NOME_MAE</td>
+<td style="text-align:left">NOME_MAE</td>
+<td style="text-align:right">1771008</td>
+<td style="text-align:right">0.24</td>
+</tr>
+<tr>
+<td style="text-align:right">105</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">CARTAO_NACIONAL_SAUDE</td>
+<td style="text-align:left">CARTAO_NACIONAL_SAUDE</td>
+<td style="text-align:right">1967232</td>
+<td style="text-align:right">0.44</td>
+</tr>
+<tr>
+<td style="text-align:right">106</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">RG_BENEFICIARIO</td>
+<td style="text-align:left">RG_BENEFICIARIO</td>
+<td style="text-align:right">1035520</td>
+<td style="text-align:right">0.69</td>
+</tr>
+<tr>
+<td style="text-align:right">107</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">ORGAO_EMISSOR_RG</td>
+<td style="text-align:left">ORGAO_EMISSOR_RG</td>
+<td style="text-align:right">421</td>
+<td style="text-align:right">0.74</td>
+</tr>
+<tr>
+<td style="text-align:right">108</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DATA_EXPED_RG</td>
+<td style="text-align:left">DATA_EXPED_RG</td>
+<td style="text-align:right">22816</td>
+<td style="text-align:right">0.75</td>
+</tr>
+<tr>
+<td style="text-align:right">109</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">PISPASEP</td>
+<td style="text-align:left">PISPASEP</td>
+<td style="text-align:right">420928</td>
+<td style="text-align:right">0.88</td>
+</tr>
+<tr>
+<td style="text-align:right">110</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DNV</td>
+<td style="text-align:left">DNV</td>
+<td style="text-align:right">66896</td>
+<td style="text-align:right">0.98</td>
+</tr>
+<tr>
+<td style="text-align:right">111</td>
+<td style="text-align:left">SAM_MATRICULA</td>
+<td style="text-align:left">DATA_FALECIMENTO</td>
+<td style="text-align:left">DATA_FALECIMENTO</td>
+<td style="text-align:right">2944</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">112</td>
+<td style="text-align:left">SAM_PLANO</td>
+<td style="text-align:left">ID_PLANO</td>
+<td style="text-align:left">ID_PLANO</td>
+<td style="text-align:right">172</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">113</td>
+<td style="text-align:left">SAM_PLANO</td>
+<td style="text-align:left">CODIGO_PLANO</td>
+<td style="text-align:left">CODIGO_PLANO</td>
+<td style="text-align:right">172</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">114</td>
+<td style="text-align:left">SAM_ROTINACARTAO</td>
+<td style="text-align:left">DESCRICAO_ROTINA_CARTAO</td>
+<td style="text-align:left">DESCRICAO_ROTINA_CARTAO</td>
+<td style="text-align:right">6614</td>
+<td style="text-align:right">0.52</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">115</td>
+<td style="text-align:left">SAM_TIPOCARTAO</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:left">TIPO_CARTAO</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">0.32</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">116</td>
+<td style="text-align:left">SAM_TIPODEPENDENTE</td>
+<td style="text-align:left">TIPO_DEPENDENTE</td>
+<td style="text-align:left">TIPO_DEPENDENTE</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">117</td>
+<td style="text-align:left">SAM_TIPODEPENDENTE</td>
+<td style="text-align:left">COD_GRAU_DEPEND_ANS</td>
+<td style="text-align:left">COD_GRAU_DEPEND_ANS</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">0.29</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">118</td>
+<td style="text-align:left">SAM_UNIMED</td>
+<td style="text-align:left">UNI_DESTINO</td>
+<td style="text-align:left">UNI_DESTINO</td>
+<td style="text-align:right">386</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">119</td>
+<td style="text-align:left">SAM_UNIMED</td>
+<td style="text-align:left">UNI_ORIGEM</td>
+<td style="text-align:left">UNI_ORIGEM</td>
+<td style="text-align:right">408</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">120</td>
+<td style="text-align:left">SFN_FATURA</td>
+<td style="text-align:left">NUMERO_FATURA</td>
+<td style="text-align:left">NUMERO_FATURA</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">----:</td>
+<td style="text-align:left">:-------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:left">:------------------------------</td>
+<td style="text-align:right">---------------:</td>
+<td style="text-align:right">----------------:</td>
+</tr>
+<tr>
+<td style="text-align:right">121</td>
+<td style="text-align:left">SFN_PESSOA</td>
+<td style="text-align:left">UNI_ORIGEM_RAZAOSOCIAL</td>
+<td style="text-align:left">UNI_ORIGEM_RAZAOSOCIAL</td>
+<td style="text-align:right">378</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">122</td>
+<td style="text-align:left">SFN_PESSOA</td>
+<td style="text-align:left">UNI_DESTINO_RAZAOSOCIAL</td>
+<td style="text-align:left">UNI_DESTINO_RAZAOSOCIAL</td>
+<td style="text-align:right">358</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Um obseração importante com relação a tabela acima são as colunas <strong>num_distinct</strong> e <strong>percent_nulls</strong>, elas mostram um valor aproximado de valores distintos e valores nulos. O valor é aproximado, porque o próprio Oracle gera essas estatísticas dessa forma, no entanto mostra uma realiade bastante clara da tabela.</p>
+<p>A separação das tabelas acima da um indicativo de tabelas que poderiam ser transformadas em dimensões, e colunas que podem ser excluídas do processo devido ao grande número de valores nulos.</p>
+<p>O documento <strong>org_brz_bn_beneficiario.xlsx</strong> instrui sobre a criação da tabela <strong>bn_beneficiario</strong> na camada bronze.</p>
+<h2 id="passo-2-fam%C3%ADlia-teto-pf">Passo 2: Família Teto PF</h2>
+<p>Trata-se de apenas uma tabela, com informações a respeito de valores teto para pessoa física. Há a necessidade de identificar e documentar a regra de negócio. No entanto é possível observar na tabela abaixo que segundo estatísticas dos campos que essa tabela atualiza no DW, todos os campos estão nulos. Temos que identificar se trata de uma regra de negócio, onde é normal que seja assim, ou algo que não é válido mais nos dias atuais, nesse caso o essa tabela pode ser descartada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">table_name</th>
+<th style="text-align:left">column_name</th>
+<th style="text-align:left">dw_column_name</th>
+<th style="text-align:right">num_distinct</th>
+<th style="text-align:right">percent_nulls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">SAM_FAMILIA_TETO_PF</td>
+<td style="text-align:left">DATA_INICIAL_TETO_COBRANCA</td>
+<td style="text-align:left">DATA_INICIAL_TETO_COBRANCA</td>
+<td style="text-align:right">2073</td>
+<td style="text-align:right">0.92</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left">SAM_FAMILIA_TETO_PF</td>
+<td style="text-align:left">VALOR_TETO_COBRANCA</td>
+<td style="text-align:left">VALOR_TETO_COBRANCA</td>
+<td style="text-align:right">619</td>
+<td style="text-align:right">0.92</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left">SAM_FAMILIA_TETO_PF</td>
+<td style="text-align:left">DATA_FINAL_TETO_COBRANCA</td>
+<td style="text-align:left">DATA_FINAL_TETO_COBRANCA</td>
+<td style="text-align:right">45</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="passo-3-filtro">Passo 3: Filtro</h2>
+<p>Nesse passo um filtro é aplicado e direciona o fluxo de dados em duas direções, <strong>busca microsiga</strong> e <strong>sem setor</strong>.
+Identificar e documenta a regra do filtro.</p>
+<h2 id="passo-41-busca-microsiga">Passo 4.1: Busca Microsiga</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">table_name</th>
+<th style="text-align:left">column_name</th>
+<th style="text-align:left">dw_column_name</th>
+<th style="text-align:right">num_distinct</th>
+<th style="text-align:right">percent_nulls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">SIGA.CTT010</td>
+<td style="text-align:left">SETOR_UNIMED</td>
+<td style="text-align:left">SETOR_UNIMED</td>
+<td style="text-align:right">160</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left">SIGA.VW_SRA010</td>
+<td style="text-align:left">TELEFONE</td>
+<td style="text-align:left">TELEFONE</td>
+<td style="text-align:right">330912</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left">SIGA.VW_SRA010</td>
+<td style="text-align:left">EMAIL</td>
+<td style="text-align:left">EMAIL</td>
+<td style="text-align:right">584768</td>
+<td style="text-align:right">0.84</td>
+</tr>
+</tbody>
+</table>
+<h2 id="passo-42-sem-setor">Passo 4.2: Sem Setor</h2>
+<p>Esse passo tenta buscar o setor, no entando parece não ser utilizado.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">table_name</th>
+<th style="text-align:left">column_name</th>
+<th style="text-align:left">dw_column_name</th>
+<th style="text-align:right">num_distinct</th>
+<th style="text-align:right">percent_nulls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">SAM_BENEFICIARIO</td>
+<td style="text-align:left">SETOR_UNIMED</td>
+<td style="text-align:left">SETOR_UNIMED</td>
+<td style="text-align:right">160</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="disclaimer">Disclaimer</h1>
+<p>[^1]: Os processo de ETL encontrados durante a análise são queries complexas, para agilizar a ánalise foi empregado o uso da I.A. para análisar as queries e extrair informação relevante. É possível que alguma tabela possa ter sido ignorada pelo algoritmo. Esse processo tem por objetivo compreender o máximo possível dos workflows e não ser absolutamente perfeito.</p>
+
+</body>
+</html>
